@@ -191,8 +191,9 @@ function StudentList() {
                                         <th><b>Id</b></th>
                                         <th><b>Name</b></th>
                                         <th><b>Code Studen</b>t</th>
+                                        <th><b>Gender</b></th>
                                         <th><b>Address</b></th>
-                                        <th><b>Email</b></th>
+                                        <th><b>Email</b></th>                                        
                                         <th><b>Course</b></th>
                                         <th><b>Action</b></th>
                                     </tr>
@@ -204,8 +205,11 @@ function StudentList() {
                                                 <td className="td-title">{item.id}</td>
                                                 <td className="td-title">{item.name}</td>
                                                 <td className="td-title">{item.codeStudent}</td>
+                                                <td className="td-title">{item.gender}</td>
                                                 <td className="td-title">{item.address}</td>
                                                 <td className="td-title">{item.email}</td>
+                                               
+
                                                 <td className="td-title">{item.course.map(item => (
                                                     <Tag color="blue" key={item}>
                                                         {
@@ -278,6 +282,14 @@ function StudentList() {
                                 onChange={e => setStudent({ ...student, code: e.target.value })}
                                 controlFeedback="codeStudent should have aleast 7 characters and max 10 characters"
                             />
+                              <TextField
+                                label="Gender"
+                                value={student.gender}
+                                name="gender"
+                                onChange={e => setStudent({ ...student, gender: e.target.value })}
+                                controlFeedback="Not Null"
+
+                            />
                             <TextField
                                 label="Address:"
                                 value={student.address}
@@ -290,10 +302,10 @@ function StudentList() {
                                 label="Email:"
                                 value={student.email}
                                 name="email"
-                                onChange={e => setStudent({ ...student, email: e.target.value })} controlFeedback="NOT NULL"
+                                onChange={e => setStudent({ ...student, email: e.target.value })} 
                                 controlFeedback="Not Null"
-
                             />
+                           
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
