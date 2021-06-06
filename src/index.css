@@ -1,0 +1,105 @@
+html {
+    overflow: hidden;
+}
+
+.main-panel > .content {
+    background: #fafafa !important;
+}
+
+.sidebar .logo, body > .navbar-collapse .logo {
+    padding: 16px 15px;
+}
+.card{
+    background-color: #fff !important;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: .43rem !important;
+  }
+.table td{
+    border-top: none !important ;
+    border-bottom: 1px solid #eff2f5 !important;
+    padding: 1rem !important;
+}
+.table > thead > tr > th{
+    padding: 1rem !important;
+    font-size: 12px !important;
+    border-bottom: 1px solid #f5f8fa !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    color: #b5b5c3!important;
+    letter-spacing: 2px !important;
+}
+.td-title{
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #3f4254!important;
+}
+.text-gray-600 {
+    color: #7e8299!important;
+}
+.form-control{
+    background-color: #f5f8fa !important;
+    border-color: #f5f8fa !important;
+    border-radius: .43rem !important;
+}
+/* //button */
+.btn-primary{
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border: 1px solid #009ef7 !important;
+    background-color: #009ef7;
+    color: #fff !important;
+}
+.btn-primary:focus{
+    background-color: #009ef7;
+    color: #fff !important;
+}
+.btn-primary:hover{
+    background-color: #009ef7;
+    color: #fff !important;
+}
+.navbar {
+    background-color: #fff !important;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(123, 123, 124, 0.05) 0px 0px 0px;
+    border-bottom: none !important;
+}
+.btn-ghost{
+    border: none !important;
+    background-color: #f5f8fa !important;
+    font-weight: 500 !important;
+    border-radius: .43rem !important;
+}
+
+
+.btn-light{
+    border: none !important;
+    
+}
+
+/* student& course */
+.btn-add {
+    height: 32px !important;
+    display: flex !important;
+    align-items: center;
+  }
+.studentModal{
+    min-height: 300px;
+  }
+.studentForm{
+    min-height: 300px;
+    margin: 0;
+    width: calc(100% - 50px);
+    height: auto;
+    left: auto;
+  
+}
+ 
+.inputForm{
+    border-radius: 10px;
+  }
+.btn-secondary{
+    background-color: aliceblue !important;
+    color: #009ef7 !important;
+    border: transparent !important;
+  }
+  

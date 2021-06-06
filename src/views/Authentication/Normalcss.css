@@ -1,0 +1,43 @@
+ .cardLogin{
+  width: 300px;
+  display: block;
+  transform: translateX(500px);
+  text-align: center;
+
+}
+
+.ant-card{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 1px solid  #C4C4C4 !important;
+}
+body{
+  background-color: #f5f8fa !important;
+}
+.ant-input-affix-wrapper {
+    background-color: #f5f8fa !important;
+    border-color: #f5f8fa !important;
+    color: #5e6278 !important;
+    padding: 0.6rem 1rem !important;
+    font-weight: 600;
+    border: 1px solid #e4e6ef;
+    font-size: 0.875rem !important;
+    border-radius: .43rem !important;
+}
+.ant-input-affix-wrapper > input.ant-input{
+  background-color: transparent;
+}
+.ant-input:placeholder-shown{
+  font-size: 0.875rem !important;
+}
+/* style button */
+.ant-btn {
+    height: 42px !important;
+    font-size: 0.875rem !important;
+    border-radius: .43rem !important;
+    font-weight: 700;
+}
+.ant-btn-ghost{
+  border: none !important;
+  box-shadow: none !important;
+  color: #1890ff !important;
+}
