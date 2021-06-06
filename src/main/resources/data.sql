@@ -13,6 +13,8 @@ INSERT INTO STUDENT (name,code_student,gender,phonenumber,address,email) values
 INSERT INTO STUDENT (name,code_student,gender,phonenumber,address,email) values 
 ('Ho Anh', '1755342','Nu','0312455','Lam Dong', 'awds123@gmail.com');
 
+insert into account(username,password) values
+('admin','123');
 
 INSERT INTO STUDENT_COURSE (STUDENT_ID, COURSE_ID)
 VALUES (1,1);
