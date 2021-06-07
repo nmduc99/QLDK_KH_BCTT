@@ -1,36 +1,50 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from 'react-router';
 import axios from "axios";
-import { Button,  Card, Table, Col } from 'react-bootstrap';
+import { Button,  Card, Table} from 'react-bootstrap';
 import {  Spin, Space } from 'antd';
 import { Formik, Form, Field } from 'formik'
+import {Row, Col, CardHeader, CardTitle, CardBody } from 'reactstrap'
+import { message } from 'antd';
 
 function Enroll() {
     const { id } = useParams();
     const [state, setState] = useState({ loading: true, data: [] });
     const { loading, data } = state || {};
-
-
+    const [courses, setCourses] = useState([]);
+    const history = useHistory();
+ 
     async function getAll() {
         setState({ loading: true, data: [] });
         const response = await axios.get(`http://localhost:8080/courses`);
+        const responseUs = await axios.get(`http://localhost:8080/students/${id}`);
+        setCourses([...responseUs.data.course] || []);
         setState({ loading: false, data: response.data || [] });
     }
+    async function enrollCourse(form){
+        const response = await axios.put(`http://localhost:8080/students/${id}/enrol`,{
+            ...form
+        }).then(({data})=> message.success(data.message))
+        .catch((error)=> message.success(error.response.message));
+    }
+     
 
     useEffect(() => {
         setState({ loading: true, data: [] });
         getAll();
     }, [])
 
-     function onSave(data) {
+    async function onSave(data) {
         const form = {
             "studentId": id,
             "courses": [...data.checked]
         }
-        dispatch(updateEnrol(form));
+       // dispatch(updateEnrol(form));
+       await enrollCourse(form);
+       console.log("save success");
     }
     function onBack() {
-        history.push("/admin/students")
+        history.push("/admin/student")
     }
 
 
@@ -45,10 +59,10 @@ function Enroll() {
                     <CardBody className="table-full-width  px-0">
                         <Row>
                             <Col md="12">
-                                <Spin spinning={isLoading}  >
-                                    {!isLoading && <Formik
+                                <Spin spinning={loading}  >
+                                    {!loading && <Formik
                                         initialValues={{
-                                            checked: !isLoading && courses && courses.map(item=>item.code)
+                                            checked: !loading && courses && courses.map(item=>item.code)
                                         }}
                                         onSubmit={onSave}
                                     >

@@ -28,7 +28,7 @@ const dashboardRoutes = [
     display: true
   },
   {
-    path: "/student/enrol/:id",
+    path: "/students/enrol/:id",
     // name: "Enroll",
     // icon: "nc-icon nc-notes",
     component: Enroll,
