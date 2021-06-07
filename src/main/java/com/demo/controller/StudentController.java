@@ -96,7 +96,6 @@ public class StudentController {
 		Student student = studentService.findById(enrol.getStudentId()).orElseThrow(
 				()->  new StudentNotFoundException("Student not found exception with id : "+ 
 							enrol.getStudentId()));
-				 
 		if(enrol.getCourses() != null) {
 			 List<Course> list = new ArrayList<Course>();
 			 for(String item : enrol.getCourses()) {
