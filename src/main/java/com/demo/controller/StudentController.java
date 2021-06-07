@@ -99,9 +99,11 @@ public class StudentController {
 				 
 		if(enrol.getCourses() != null) {
 			 List<Course> list = new ArrayList<Course>();
-			 for(Long item : enrol.getCourses()) {
-				  Course course = courseService.findById(item).orElse(null);
-				  list.add(course);
+			 for(String item : enrol.getCourses()) {
+				  Course course = courseService.findByCode(item);
+				  if(course != null) {
+					  list.add(course);
+				  }
 			 }
 			 student.setCourse(list);
 		}

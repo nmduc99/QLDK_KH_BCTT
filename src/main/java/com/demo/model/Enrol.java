@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 public class Enrol {
 	@NotBlank(message = "Your input is required")
 	private String studentId;
-	private Long[] courses;
+	private String[] courses;
 	
 	public Long getStudentId() {
 		return Long.parseLong(studentId);
@@ -13,10 +13,10 @@ public class Enrol {
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;
 	}
-	public Long[] getCourses() {
+	public String[] getCourses() {
 		return courses;
 	}
-	public void setCourses(Long[] courses) {
+	public void setCourses(String[] courses) {
 		this.courses = courses;
 	}
 	 

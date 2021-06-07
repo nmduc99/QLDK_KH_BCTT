@@ -16,6 +16,6 @@ public interface CourseService {
 
 	void deleteById(Long id);
 
-	
+	Course findByCode(String code);
 
 }

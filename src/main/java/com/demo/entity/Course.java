@@ -2,6 +2,7 @@ package com.demo.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +28,7 @@ public class Course {
 	private String name;
 	@NotBlank
 	private String description;
-	@ManyToMany // (mappedBy = "course")// mappedBy trỏ tới tên biến course ở trong Course.
+	@ManyToMany(cascade = {CascadeType.MERGE,CascadeType.PERSIST}) // (mappedBy = "course")// mappedBy trỏ tới tên biến course ở trong Course.
 	@JoinTable(name = "student_course", // Tạo ra một join table tên là"student_course"
 			joinColumns = @JoinColumn(name = "student_id"), // Trong đó, khóa ngoại chính là student_id trỏ tới class
 															// hiện tại (Student)
